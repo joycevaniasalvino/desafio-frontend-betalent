@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Header */
+header {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+
+}
+
