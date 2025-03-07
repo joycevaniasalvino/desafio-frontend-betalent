@@ -1,5 +1,5 @@
-import Img from "../assets/images/Photo - 06.png"
-
+import { formatDate } from "../utils/formatDate";
+import { formatPhone } from "../utils/formatPhone";
 interface Funcionario {
     id: number;
     image: string;
@@ -29,8 +29,8 @@ function Tabela({ funcionarios }: { funcionarios: Funcionario[] }) {
                     <img className="foto-tabela" src={funcionario.image} alt="Imagem do funcionário." />
                     <p className="nome-tabela">{funcionario.name}</p>
                     <p className="cargo-tabela">{funcionario.job}</p>
-                    <p className="dataDeAdmissao-tabela">{funcionario.admission_date}</p>
-                    <p className="telefone-tabela">{funcionario.phone}</p>
+                    <p className="dataDeAdmissao-tabela">{formatDate(funcionario.admission_date)}</p>
+                    <p className="telefone-tabela">{formatPhone(funcionario.phone)}</p>
 
                     <button className="btn-expandir">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
