@@ -23,6 +23,8 @@
 header {
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.15);
   
+  height: 60px;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,7 +68,7 @@ h3 {
 }
 
 .body-funcionarios{
-  margin: 15px 14px 0 14px;
+  margin: 32px 14px 0 14px;
 }
 
 .h1-funcionarios{
