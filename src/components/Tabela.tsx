@@ -1,6 +1,15 @@
 import Img from "../assets/images/Photo - 06.png"
 
-function Tabela() {
+interface Funcionario {
+    id: number;
+    image: string;
+    name: string;
+    job: string;
+    admission_date: string;
+    phone: string;
+}
+
+function Tabela({ funcionarios }: { funcionarios: Funcionario[] }) {
     return (
         <div className="Tabela">
             <div className="header-tabela">
@@ -12,17 +21,25 @@ function Tabela() {
 
                 <svg className="circle-headerTabela" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="8" cy="8" r="8" fill="#ffffff"></circle> </g></svg>
             </div>
-            <div className="item-funcionario">
-                <img className="foto-tabela" src={Img} alt="" />
-                <p className="nome-tabela">João Pedro Dias</p>
-                <p className="cargo-tabela">Front-end</p>
-                <p className="dataDeAdmissao-tabela">12/12/2024</p>
-                <p className="telefone-tabela">+55 (83) 9 0000-0000</p>
 
-                <button className="btn-expandir">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18 9L12 15L6 9" stroke="#0500FF"></path> </g></svg>
-                </button>
-            </div>
+            {funcionarios.length === 0 && <p className="error-get">Nenhum funcionário encontrado.</p>}
+
+            {funcionarios.map((funcionario) => (
+                <div className="item-funcionario" key={funcionario.id}>
+                    <img className="foto-tabela" src={funcionario.image} alt="Imagem do funcionário." />
+                    <p className="nome-tabela">{funcionario.name}</p>
+                    <p className="cargo-tabela">{funcionario.job}</p>
+                    <p className="dataDeAdmissao-tabela">{funcionario.admission_date}</p>
+                    <p className="telefone-tabela">{funcionario.phone}</p>
+
+                    <button className="btn-expandir">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18 9L12 15L6 9" stroke="#0500FF"></path>
+                        </svg>
+                    </button>
+                </div>
+            ))}
+
         </div>
     )
 }

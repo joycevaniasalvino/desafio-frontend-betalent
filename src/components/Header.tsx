@@ -3,7 +3,7 @@ function Header(){
     return (
         <header>
             <div>
-                <img src={Logo} alt="Logo BeTalent" />
+                <img src={Logo} alt="Logo BeTalent." />
             </div>
         </header>
     )
