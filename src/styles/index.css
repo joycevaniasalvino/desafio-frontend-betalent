@@ -26,6 +26,9 @@ header {
 header > div {
   width: 100%;
   max-width: 1440px;
+
+  display: flex;
+  align-items: center;
 }
 
 header > div > img {
@@ -84,14 +87,22 @@ h3 {
   max-width: 768px;
 }
 
+.btn-barraPesquisa{
+  position: absolute;
+  right: 12px;
+  top: 12px;
+
+  border: none;
+  background-color: #FFFFFF;
+  width: 24px;
+
+  cursor: pointer;
+}
+
 .svg-pesquisa{
   fill: #DFDFDF;
   height: 24px;
   width: 24px;
-
-  position: absolute;
-  right: 12px;
-  top: 12px;
 }
 
 .Tabela{
@@ -115,6 +126,10 @@ h3 {
 
   box-shadow: 0 2px 7px rgba(0, 0, 0, 0.15);
 
+}
+
+.circle-headerTabela{
+  display: none;
 }
 
 .item-funcionario{
@@ -176,6 +191,9 @@ h3 {
   margin-left: 15px;
 }
 
+.btn-expandir{
+  display: none;
+}
 
 @media (min-width: 768px) {
   .body-funcionarios{
@@ -212,6 +230,15 @@ h3 {
     box-shadow: 0 2px 7px rgba(0, 0, 0, 0.15);
   
   }
+
+  .circle-headerTabela{
+    display: initial;
+
+    margin: auto;
+
+    width: 8px;
+    height: 8px;
+  }
   
   .item-funcionario{
     padding: 10px 15px 10px 0px;
@@ -243,7 +270,7 @@ h3 {
   }
   
   .titulo2, .nome-tabela {
-    grid-column: 4 / 13;
+    grid-column: 4 / 12;
     
   
   }
@@ -272,5 +299,28 @@ h3 {
     object-fit: cover;
   
     margin-left: 16px;
+  }
+
+  .btn-expandir{
+    grid-column: 12 / 13;
+    
+    border: none;
+    background-color: #ffffff;
+    width: 32px;
+    width: 32px;
+  
+    cursor: pointer;
+
+
+    display: flex;
+    align-items: center;
+
+    margin: auto;
+  }
+}
+
+@media (max-width: 375px) {
+  .item-funcionario{
+    padding-right: 11px
   }
 }
