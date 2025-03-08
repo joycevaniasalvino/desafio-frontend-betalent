@@ -9,7 +9,7 @@ interface Funcionario {
     phone: string;
 }
 
-function Tabela({ funcionarios }: { funcionarios: Funcionario[] }) {
+function Tabela({ funcionarios, error }: { funcionarios: Funcionario[], error: string | null }) {
     return (
         <div className="Tabela">
             <div className="header-tabela">
@@ -22,7 +22,9 @@ function Tabela({ funcionarios }: { funcionarios: Funcionario[] }) {
                 <svg className="circle-headerTabela" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="8" cy="8" r="8" fill="#ffffff"></circle> </g></svg>
             </div>
 
-            {funcionarios.length === 0 && <p className="error-get">Nenhum funcionário encontrado.</p>}
+            {error && <p className="error-get">{error}</p>}
+
+            {funcionarios.length === 0 && !error && <p className="error-get">Nenhum funcionário encontrado.</p>}
 
             {funcionarios.map((funcionario) => (
                 <div className="item-funcionario" key={funcionario.id}>
