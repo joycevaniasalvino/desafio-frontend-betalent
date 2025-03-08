@@ -95,6 +95,11 @@ h3 {
   max-width: 768px;
 }
 
+.barraPesquisa > input:focus {
+  outline: none;
+  border: 2px solid #0500FF;
+}
+
 .btn-barraPesquisa{
   position: absolute;
   right: 12px;
