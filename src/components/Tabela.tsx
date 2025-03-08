@@ -1,5 +1,8 @@
+import { useState } from "react";
 import { formatDate } from "../utils/formatDate";
 import { formatPhone } from "../utils/formatPhone";
+import ModalFuncionario from "./ModalFuncionario";
+
 interface Funcionario {
     id: number;
     image: string;
@@ -10,6 +13,20 @@ interface Funcionario {
 }
 
 function Tabela({ funcionarios, error }: { funcionarios: Funcionario[], error: string | null }) {
+
+    const [abrirModal, setAbrirModal] = useState(false);
+    const [funcionarioSelecionado, setFuncionarioSelecionado] = useState<Funcionario | null>(null);
+
+    const abrirModalFuncionario = (funcionario: Funcionario) => {
+        setFuncionarioSelecionado(funcionario);
+        setAbrirModal(true);
+    };
+
+    const fecharModal = () => {
+        setAbrirModal(false);
+        setFuncionarioSelecionado(null);
+    };
+
     return (
         <div className="Tabela">
             <div className="header-tabela">
@@ -34,7 +51,7 @@ function Tabela({ funcionarios, error }: { funcionarios: Funcionario[], error: s
                     <p className="dataDeAdmissao-tabela">{formatDate(funcionario.admission_date)}</p>
                     <p className="telefone-tabela">{formatPhone(funcionario.phone)}</p>
 
-                    <button className="btn-expandir">
+                    <button className="btn-expandir" onClick={() => abrirModalFuncionario(funcionario)}>
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M18 9L12 15L6 9" stroke="#0500FF"></path>
                         </svg>
@@ -42,8 +59,15 @@ function Tabela({ funcionarios, error }: { funcionarios: Funcionario[], error: s
                 </div>
             ))}
 
+            {abrirModal && funcionarioSelecionado && (
+                <ModalFuncionario
+                    key={funcionarioSelecionado.id}
+                    funcionario={funcionarioSelecionado}
+                    setAbrirModal={fecharModal}
+                />
+            )}
         </div>
-    )
+    );
 }
 
 export default Tabela;
