@@ -9,7 +9,7 @@
   font-style: normal;
 }
 
-.App{
+.app{
   background-color: #F0F0F0;
   height: 110vh;
 }
@@ -40,9 +40,7 @@ header > div {
 }
 
 header > div > img {
-  padding-left: 5px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+  margin: 5px 0 5px 22px;
 }
 
 h1 {
@@ -68,7 +66,7 @@ h3 {
 }
 
 .body-funcionarios{
-  margin: 32px 14px 0 14px;
+  margin: 32px 32px 0 32px;
 }
 
 .h1-funcionarios{
@@ -118,9 +116,9 @@ h3 {
   width: 24px;
 }
 
-.Tabela{
+.tabela{
   max-width: 1440px;
-  padding: 32px 14px 32px 14px;
+  padding: 32px 32px;
 
   margin: 0 auto;
 
@@ -233,6 +231,18 @@ h3 {
 }
 
 @media (max-width: 1024px) {
+  header > div > img {
+    margin: 5px 0 5px 11px;
+  }
+
+  .body-funcionarios{
+    margin: 32px 20px 0 20px;
+  }
+
+  .tabela{
+    padding: 32px 20px;
+  }
+
   .header-tabela{
     background-color: #0500FF;
     color: #FFFFFF;

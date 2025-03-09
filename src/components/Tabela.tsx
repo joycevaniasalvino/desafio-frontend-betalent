@@ -19,7 +19,7 @@ function Tabela({ funcionarios, error }: { funcionarios: Funcionario[], error: s
     };
 
     return (
-        <div className="Tabela">
+        <div className="tabela">
             <div className="header-tabela">
                 <h2 className="titulo1">FOTO</h2>
                 <h2 className="titulo2">NOME</h2>
