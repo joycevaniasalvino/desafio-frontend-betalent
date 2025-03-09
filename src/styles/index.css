@@ -209,6 +209,10 @@ h3 {
   display: none;
 }
 
+.informacoes-expandidas{
+  display: none;
+}
+
 @media (min-width: 768px) {
   .body-funcionarios{
     display: flex;
@@ -331,6 +335,20 @@ h3 {
 
     margin: auto;
   }
+
+  .informacoes-expandidas{
+    display: block;
+    padding: 32px 16px;
+    background-color: #FFFFFF;
+  }
+
+  .informacoes-expandidas > div{
+    display: flex;
+    justify-content: space-between;
+
+    border-bottom: 1px dashed #DFDFDF;
+  }
+
 
 }
 

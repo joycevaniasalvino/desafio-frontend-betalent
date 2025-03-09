@@ -43,10 +43,10 @@ function Tabela({ funcionarios, error }: { funcionarios: Funcionario[], error: s
                 <div key={funcionario.id}>
                     <div className="item-funcionario">
                         <img className="foto-tabela" src={funcionario.image} alt="Imagem do funcionário." />
-                        <p className="nome-tabela">{funcionario.name}</p>
-                        <p className="cargo-tabela">{funcionario.job}</p>
-                        <p className="dataDeAdmissao-tabela">{formatDate(funcionario.admission_date)}</p>
-                        <p className="telefone-tabela">{formatPhone(funcionario.phone)}</p>
+                        <h3 className="nome-tabela">{funcionario.name}</h3>
+                        <h3 className="cargo-tabela">{funcionario.job}</h3>
+                        <h3 className="dataDeAdmissao-tabela">{formatDate(funcionario.admission_date)}</h3>
+                        <h3 className="telefone-tabela">{formatPhone(funcionario.phone)}</h3>
 
                         <button className="btn-expandir" onClick={() => expandirInformacoes(funcionario.id)}>
                             {linhaExpandida === funcionario.id ? (
@@ -63,9 +63,18 @@ function Tabela({ funcionarios, error }: { funcionarios: Funcionario[], error: s
 
                     {linhaExpandida === funcionario.id && (
                         <div className="informacoes-expandidas">
-                            <p><strong>CARGO:</strong> {funcionario.job}</p>
-                            <p><strong>DATA DE ADMISSÃO:</strong> {formatDate(funcionario.admission_date)}</p>
-                            <p><strong>TELEFONE:</strong> {formatPhone(funcionario.phone)}</p>
+                            <div>
+                                <h2><strong>CARGO</strong></h2>
+                                <h3>{funcionario.job}</h3>
+                            </div>
+                            <div>
+                                <h2><strong>DATA DE ADMISSÃO</strong></h2>
+                                <h3>{formatDate(funcionario.admission_date)}</h3>
+                            </div>
+                            <div>
+                                <h2><strong>TELEFONE</strong></h2>
+                                <h3>{formatPhone(funcionario.phone)}</h3>
+                            </div>
                         </div>
                     )}
                 </div>

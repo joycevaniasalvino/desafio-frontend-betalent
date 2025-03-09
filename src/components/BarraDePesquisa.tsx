@@ -33,7 +33,7 @@ const BarraDePesquisa: FC<BarraDePesquisaProps> = ({ funcionarios, setFuncionari
 
     return (
         <div className="barraPesquisa">
-            <input type="text" placeholder="Pesquisar"  value={query}
+            <input type="text" placeholder="Pesquisar" value={query}
         onChange={handleSearch}/>
             <button className="btn-barraPesquisa">
                 <svg className="svg-pesquisa" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
